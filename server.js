@@ -24,6 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactgreen");
 // App listening
 app.listen(PORT, () => {
   console.log("App listening on port", PORT);
-  if (process.env.NODE_ENV === "development")
+  if (process.env.NODE_ENV !== "production")
     console.log("https://localhost:" + PORT);
 });
