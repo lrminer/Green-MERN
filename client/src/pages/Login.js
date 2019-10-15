@@ -1,5 +1,5 @@
 import React from "react";
-import API from "../utils/API";
+// import API from "../utils/API";
 
 class Login extends React.Component {
   state = {
@@ -24,7 +24,15 @@ class Login extends React.Component {
   };
 
   render() {
-    return <></>;
+    return (
+      <>
+        <form>
+          <input type="text" name="username" />
+          <input type="password" name="password" />
+          <input type="button" name="submit" value="Submit" />
+        </form>
+      </>
+    );
   }
 }
 

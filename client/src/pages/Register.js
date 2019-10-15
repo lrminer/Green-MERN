@@ -35,4 +35,4 @@ class Register extends React.Component {
   }
 }
 
-export default Dashboard;
+export default Register;
