@@ -9,7 +9,6 @@ class Register extends React.Component {
   };
 
   componentDidMount() {
-    this.loadBudgets();
   }
 
   handleInputChange = event => {
@@ -25,13 +24,28 @@ class Register extends React.Component {
     // Create user action here
     const { username, email, password } = this.state;
     const user = { username, email, password };
-
+    console.log(user);
     API.postUser(user);
     this.setState({ username: "", password: "", email: "" });
   };
 
   render() {
-    return <></>;
+    return (
+      <>
+        <form>
+          <input type="text" name="username" onChange={this.handleInputChange} value={this.state.username} />
+          <input type="text" name="email" onChange={this.handleInputChange} value={this.state.email} />
+          <input type="password" name="password" onChange={this.handleInputChange} value={this.state.password} />
+          
+          <input
+            type="button"
+            name="submit"
+            value="Submit"
+            onClick={this.handleFormSubmit}
+          />
+        </form>
+      </>
+    );
   }
 }
 

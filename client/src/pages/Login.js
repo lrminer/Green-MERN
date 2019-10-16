@@ -29,7 +29,12 @@ class Login extends React.Component {
         <form>
           <input type="text" name="username" />
           <input type="password" name="password" />
-          <input type="button" name="submit" value="Submit" />
+          <input
+            type="button"
+            name="submit"
+            value="Submit"
+            onClick={this.handleFormSubmit}
+          />
         </form>
       </>
     );
