@@ -2,6 +2,8 @@ import React from "react";
 import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 class Register extends React.Component {
   state = {
@@ -35,30 +37,9 @@ class Register extends React.Component {
       <>
         <Navbar />
         <form>
-          <input
-            type="text"
-            name="username"
-            onChange={this.handleInputChange}
-            value={this.state.username}
-          />
-          <input
-            type="text"
-            name="email"
-            onChange={this.handleInputChange}
-            value={this.state.email}
-          />
-          <input
-            type="password"
-            name="password"
-            onChange={this.handleInputChange}
-            value={this.state.password}
-          />
-          <input
-            type="button"
-            name="submit"
-            value="Submit"
-            onClick={this.handleFormSubmit}
-          />
+          <Input type="text" name="username" />
+          <Input type="password" name="password" />
+          <Button type="button" onClick={this.handleFormSubmit} text="Submit" />
         </form>
         <Footer />
       </>
