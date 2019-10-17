@@ -37,9 +37,10 @@ class Register extends React.Component {
       <>
         <Navbar />
         <form>
-          <Input type="text" name="username" />
-          <Input type="password" name="password" />
-          <Button type="button" onClick={this.handleFormSubmit} text="Submit" />
+          <Input type="text" name="username" value={this.props.username} placeholder="Username" />
+          <Input type="text" name="email" value={this.props.email} placeholder="Email" />
+          <Input type="password" name="password" value={this.props.password} placeholder="Password" />
+          <Button type="button" onClick={this.handleFormSubmit} text="Register  " />
         </form>
         <Footer />
       </>
