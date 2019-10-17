@@ -1,5 +1,7 @@
 import React from "react";
 import API from "../utils/API";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 class Dashboard extends React.Component {
   state = {
@@ -17,7 +19,10 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    return <></>;
+    return <>
+      <Navbar />
+      <Footer />
+    </>;
   }
 }
 
