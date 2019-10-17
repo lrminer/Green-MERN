@@ -1,5 +1,7 @@
 import React from "react";
 // import API from "../utils/API";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 class Login extends React.Component {
   state = {
@@ -26,6 +28,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
+        <Navbar />
         <form>
           <input type="text" name="username" />
           <input type="password" name="password" />
@@ -36,6 +39,7 @@ class Login extends React.Component {
             onClick={this.handleFormSubmit}
           />
         </form>
+        <Footer />
       </>
     );
   }

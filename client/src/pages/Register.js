@@ -1,5 +1,7 @@
 import React from "react";
 import API from "../utils/API";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 class Register extends React.Component {
   state = {
@@ -8,8 +10,7 @@ class Register extends React.Component {
     password: ""
   };
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -32,11 +33,26 @@ class Register extends React.Component {
   render() {
     return (
       <>
+        <Navbar />
         <form>
-          <input type="text" name="username" onChange={this.handleInputChange} value={this.state.username} />
-          <input type="text" name="email" onChange={this.handleInputChange} value={this.state.email} />
-          <input type="password" name="password" onChange={this.handleInputChange} value={this.state.password} />
-          
+          <input
+            type="text"
+            name="username"
+            onChange={this.handleInputChange}
+            value={this.state.username}
+          />
+          <input
+            type="text"
+            name="email"
+            onChange={this.handleInputChange}
+            value={this.state.email}
+          />
+          <input
+            type="password"
+            name="password"
+            onChange={this.handleInputChange}
+            value={this.state.password}
+          />
           <input
             type="button"
             name="submit"
@@ -44,6 +60,7 @@ class Register extends React.Component {
             onClick={this.handleFormSubmit}
           />
         </form>
+        <Footer />
       </>
     );
   }
