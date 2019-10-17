@@ -47,7 +47,7 @@ class Register extends React.Component {
       income: ""
     });
   };
-
+  //todo: fuctions
   render() {
     return (
       <div className="container">
