@@ -2,20 +2,23 @@ import React from "react";
 // import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import API from "../utils/API";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 class createBudget extends React.Component {
   state = {
     grocery: "",
-    dineOut: "",
+    dineout: "",
     alcohol: "",
     housing: "",
-    apparerlAndServices: "",
+    apparel: "",
     transportation: "",
-    healthCare: "",
+    healthcare: "",
     entertainment: "",
-    personalCare: "",
+    personalcare: "",
     education: "",
-    miscallaneous: "",
+    miscellaneous: "",
     donations: "",
     insurance: ""
   };
@@ -31,18 +34,52 @@ class createBudget extends React.Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    const {
+      grocery,
+      dineout,
+      alcohol,
+      housing,
+      apparel,
+      transportation,
+      healthcare,
+      entertainment,
+      personalcare,
+      education,
+      miscellaneous,
+      donations,
+      insurance
+    } = this.state;
+    const budget = {
+      grocery,
+      dineout,
+      alcohol,
+      housing,
+      apparel,
+      transportation,
+      healthcare,
+      entertainment,
+      personalcare,
+      education,
+      miscellaneous,
+      donations,
+      insurance
+    };
+
+    console.log(budget);
+    API.postBudget(budget);
+
     this.setState({
       grocery: "",
-      dineOut: "",
+      dineout: "",
       alcohol: "",
       housing: "",
-      apparerlAndServices: "",
+      apparel: "",
       transportation: "",
-      healthCare: "",
+      healthcare: "",
       entertainment: "",
-      personalCare: "",
+      personalcare: "",
       education: "",
-      miscallaneous: "",
+      miscellaneous: "",
       donations: "",
       insurance: ""
     });
@@ -54,139 +91,99 @@ class createBudget extends React.Component {
         <Navbar />
         <div className="container">
           <form>
-            <div class="form-group">
-              <label for="grocery">Grocery</label>
+            {/* <div className="form-group">
+              <label htmlFor="grocery">Grocery</label>
               <input
                 type="number"
-                class="form-control"
+                className="form-control"
                 name="grocery"
                 id="input-grocery"
                 placeholder="Grocery"
               />
-            </div>
-            <div class="form-group">
-              <label for="dineout">Dine Out</label>
-              <input
-                type="number"
-                class="form-control"
-                name="dineout"
-                id="input-dineout"
-                placeholder="Dine Out"
-              />
-            </div>
-            <div class="form-group">
-              <label for="alcohol">Alcohol</label>
-              <input
-                type="number"
-                class="form-control"
-                name="alcohol"
-                id="input-alcohol"
-                placeholder="Alcohol"
-              />
-            </div>
-            <div class="form-group">
-              <label for="housing">Housing</label>
-              <input
-                type="number"
-                class="form-control"
-                name="housing"
-                id="input-housing"
-                placeholder="Housing"
-              />
-            </div>
-            <div class="form-group">
-              <label for="apparel">Apparel</label>
-              <input
-                type="number"
-                class="form-control"
-                name="apparel"
-                id="input-apparel"
-                placeholder="Apparel"
-              />
-            </div>
-            <div class="form-group">
-              <label for="transportation">Transportation</label>
-              <input
-                type="number"
-                class="form-control"
-                name="transportation"
-                id="input-transportation"
-                placeholder="Transportation"
-              />
-            </div>
-            <div class="form-group">
-              <label for="healthcare">Health Care</label>
-              <input
-                type="number"
-                class="form-control"
-                name="healthcare"
-                id="input-healthcare"
-                placeholder="Health Care"
-              />
-            </div>
-            <div class="form-group">
-              <label for="entertainment">Entertainment</label>
-              <input
-                type="number"
-                class="form-control"
-                name="entertainment"
-                id="input-entertainment"
-                placeholder="Entertainment"
-              />
-            </div>
-            <div class="form-group">
-              <label for="personalcare">Personal Care</label>
-              <input
-                type="number"
-                class="form-control"
-                name="personalcare"
-                id="input-personalcare"
-                placeholder="Personal Care"
-              />
-            </div>
-            <div class="form-group">
-              <label for="education">Education</label>
-              <input
-                type="number"
-                class="form-control"
-                name="education"
-                id="input-education"
-                placeholder="Education"
-              />
-            </div>
-            <div class="form-group">
-              <label for="miscellaneous">Miscallaneous</label>
-              <input
-                type="number"
-                class="form-control"
-                name="miscellaneous"
-                id="input-miscellaneous"
-                placeholder="Miscallaneous"
-              />
-            </div>
-            <div class="form-group">
-              <label for="donations">Donations</label>
-              <input
-                type="number"
-                class="form-control"
-                name="donations"
-                id="input-donations"
-                placeholder="Donations"
-              />
-            </div>
-            <div class="form-group">
-              <label for="insurance">Insurance</label>
-              <input
-                type="number"
-                class="form-control"
-                name="insurance"
-                id="input-insurance"
-                placeholder="Insurance"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Submit Budget
-            </button>
+            </div> */}
+            <Input
+              type="number"
+              placeholder="Grocery"
+              name="grocery"
+              aria="grocery"
+            />
+            <Input
+              type="number"
+              placeholder="Dine Out"
+              name="dineout"
+              aria="dineout"
+            />
+            <Input
+              type="number"
+              placeholder="Alcohol"
+              name="alcohol"
+              aria="alcohol"
+            />
+            <Input
+              type="number"
+              placeholder="Housing"
+              name="housing"
+              aria="housing"
+            />
+            <Input
+              type="number"
+              placeholder="Apparel"
+              name="apparel"
+              aria="apparel"
+            />
+            <Input
+              type="number"
+              placeholder="Transportation"
+              name="transportation"
+              aria="transportation"
+            />
+            <Input
+              type="number"
+              placeholder="Healthcare"
+              name="healtcare"
+              aria="healtcare"
+            />
+            <Input
+              type="number"
+              placeholder="Entertainment"
+              name="entertainment"
+              aria="entertainment"
+            />
+            <Input
+              type="number"
+              placeholder="Personal Care"
+              name="personalcare"
+              aria="personalcare"
+            />
+            <Input
+              type="number"
+              placeholder="Education"
+              name="education"
+              aria="education"
+            />
+            <Input
+              type="number"
+              placeholder="Miscellaneous"
+              name="miscellaneous"
+              aria="miscellaneous"
+            />
+            <Input
+              type="number"
+              placeholder="Donations"
+              name="donations"
+              aria="donations"
+            />
+            <Input
+              type="number"
+              placeholder="Insurance"
+              name="insurance"
+              aria="insurance"
+            />
+            <Button
+              type="button"
+              onClick={this.handleFormSubmit}
+              text="Submit Budget"
+            />
           </form>
         </div>
 

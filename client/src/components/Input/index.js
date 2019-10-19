@@ -5,21 +5,18 @@ class Input extends Component {
   state = {};
 
   render() {
+    const { type, placeholder, name, aria } = this.props;
     return (
       <>
-        <div className="input-group mb-3">
+        <div className="form-group">
+          <label htmlFor={name}>{placeholder}</label>
           <input
-            type={this.props.type}
+            type={type}
             className="form-control"
-            name={this.props.name}
-            placeholder={this.props.placeholder}
-            aria-label={this.props.aria}
+            name={name}
+            id={`input-${name}`}
+            aria-label={aria}
           />
-          <div className="input-group-append">
-            <span className="input-group-text">
-              {this.props.spanText}
-            </span>
-          </div>
         </div>
       </>
     );
