@@ -2,7 +2,7 @@ import React from "react";
 import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import DashboardComponent from "../components/DashboardContainer";
 // import Button from "../components/Button";
 
 class Dashboard extends React.Component {
@@ -21,10 +21,13 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    return <>
-      <Navbar />
-      <Footer />
-    </>;
+    return (
+      <>
+        <Navbar />
+          <DashboardComponent />
+        <Footer />
+      </>
+    );
   }
 }
 
