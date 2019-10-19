@@ -23,9 +23,10 @@ class Navbar extends Component {
                   Register
                 </a>
               </li>
+
               <li className="nav-item active">
                 <a className="nav-link" href="/createbudget">
-                  New Budget
+                  Create Budget
                 </a>
               </li>
             </ul>
