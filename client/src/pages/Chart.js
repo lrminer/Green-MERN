@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Chart from "../components/Chart";
+import PieChart from "../components/PieChart";
 
 
 class Chart extends Component {
@@ -14,7 +14,7 @@ class Chart extends Component {
     }
 
     componentWillMount() {
-        this.getchartData();
+        this.getChartData();
     }
 
     getChartData() {
@@ -50,12 +50,10 @@ class Chart extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>Welcome to React</h2>
-                </div>
-                <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom" />
+            <div>
+                <Navbar />
+                <PieChart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom" />
+                <Footer />
             </div>
         );
     }
