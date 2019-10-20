@@ -1,5 +1,5 @@
 import React from "react";
-// import API from "../utils/API";
+import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
@@ -24,6 +24,13 @@ class Login extends React.Component {
     event.preventDefault();
     // TODO:
     // Login action here
+
+    API.login().then(response => {
+      // console.log(response);
+      const { token } = response.data;
+      console.log(token);
+      localStorage.setItem("jwt", token);
+    });
     this.setState({ username: "", password: "" });
   };
 

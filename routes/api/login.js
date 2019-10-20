@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
+const loginController = require("../../controllers/loginController");
 
 // format of token
 // authorization : bearer <access_token>
@@ -25,8 +26,6 @@ const verifyToken = (req, res, next) => {
 
 // '/api/login'
 router.route("/").post((req, res) => {
-  user = { id: 1, username: "fake" };
-
   jwt.sign({ user }, "secret", (err, token) => {
     res.json({ token });
   });

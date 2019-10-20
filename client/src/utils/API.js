@@ -33,5 +33,10 @@ export default {
   },
   deleteBudget: function(id) {
     return axios.delete("/api/budgets/" + id);
+  },
+
+  // login operations
+  login: function() {
+    return axios.post("/api/login");
   }
 };

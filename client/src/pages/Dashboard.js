@@ -7,7 +7,8 @@ import DashboardComponent from "../components/DashboardContainer";
 
 class Dashboard extends React.Component {
   state = {
-    comparison: {}
+    comparison: {},
+    data: {}
   };
 
   componentDidMount() {
@@ -16,7 +17,7 @@ class Dashboard extends React.Component {
 
   loadBudgets = () => {
     API.getBudgets()
-      .then(res => this.setState({ comparison: res.data }))
+      .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -25,7 +26,7 @@ class Dashboard extends React.Component {
       <>
         <div className="container">
           <Navbar />
-          <DashboardComponent />
+          <DashboardComponent data={this.state.data} />
           <Footer />
         </div>
       </>

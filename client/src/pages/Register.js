@@ -10,12 +10,12 @@ class Register extends React.Component {
   state = {
     username: "",
     email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    age: "",
-    location: "",
-    income: ""
+    password: ""
+    // firstName: "",
+    // lastName: "",
+    // age: "",
+    // location: "",
+    // income: ""
   };
 
   componentDidMount() {}
@@ -34,34 +34,34 @@ class Register extends React.Component {
     const {
       username,
       email,
-      password,
-      firstName,
-      lastName,
-      age,
-      location,
-      income
+      password
+      // firstName,
+      // lastName,
+      // age,
+      // location,
+      // income
     } = this.state;
     const user = {
       username,
       email,
-      password,
-      firstName,
-      lastName,
-      age,
-      location,
-      income
+      password
+      // firstName,
+      // lastName,
+      // age,
+      // location,
+      // income
     };
     console.log(user);
     API.postUser(user);
     this.setState({
       username: "",
       email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      age: "",
-      location: "",
-      income: ""
+      password: ""
+      // firstName: "",
+      // lastName: "",
+      // age: "",
+      // location: "",
+      // income: ""
     });
   };
   //todo: fuctions
@@ -71,18 +71,21 @@ class Register extends React.Component {
         <Navbar />
         <form>
           <Input
+            onChange={this.handleInputChange}
             type="text"
             name="username"
             value={this.props.username}
             placeholder="Username"
           />
           <Input
+            onChange={this.handleInputChange}
             type="text"
             name="email"
             value={this.props.email}
             placeholder="Email"
           />
           <Input
+            onChange={this.handleInputChange}
             type="password"
             name="password"
             value={this.props.password}
@@ -127,7 +130,7 @@ class Register extends React.Component {
             Income
                         <input type="income" className="form-control" name="income" id="income" placeholder="income" />
           </div> */}
-          <Button type="button" onClick={this.handleFormSubmit} text="Submit" />
+          {/* <Button type="button" onClick={this.handleFormSubmit} text="Submit" /> */}
         </form>
         <Footer />
       </div>
