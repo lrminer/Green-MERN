@@ -12,12 +12,6 @@ module.exports = {
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   },
   create: function(req, res) {
-    // const budget = req.body;
-    // const parsedBudget = {};
-    // for (let property in budget) {
-    //   parsedBudget[property] = parseInt(budget.property);
-    // }
-    // console.log(parsedBudget);
     db.Budget.create(req.body)
       .then(dbBudget => res.json(dbBudget))
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)

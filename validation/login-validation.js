@@ -17,4 +17,4 @@ const validateLogin = data => {
   return { errors, isValid: isEmpty(errors) };
 };
 
-module.exports = validateLogin();
+module.exports = validateLogin;

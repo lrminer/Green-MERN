@@ -25,4 +25,4 @@ const validateRegistration = data => {
   };
 };
 
-module.exports = validateRegistration();
+module.exports = validateRegistration;
