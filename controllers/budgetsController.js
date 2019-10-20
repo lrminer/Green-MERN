@@ -12,7 +12,7 @@ module.exports = {
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   },
   create: function(req, res) {
-    db.Budget.create(req.body)
+    db.Budget.create(req.body) 
       .then(dbBudget => res.json(dbBudget))
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   },
