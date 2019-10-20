@@ -30,13 +30,19 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <Navbar />
-        <form>
-          <Input type="text" name="username" />
-          <Input type="password" name="password" />
-          <Button type="button" onClick={this.handleFormSubmit} text="Submit" />
-        </form>
-        <Footer />
+        <div className="container">
+          <Navbar />
+          <form>
+            <Input type="text" name="username" />
+            <Input type="password" name="password" />
+            <Button
+              type="button"
+              onClick={this.handleFormSubmit}
+              text="Submit"
+            />
+          </form>
+          <Footer />
+        </div>
       </>
     );
   }
