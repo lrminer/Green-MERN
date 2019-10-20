@@ -12,7 +12,8 @@ class UserSettings extends React.Component {
     lastName: "",
     age: "",
     location: "",
-    income: ""
+    income: "",
+    id: window.location.href
   };
 
   componentDidMount() {}
@@ -28,6 +29,7 @@ class UserSettings extends React.Component {
     event.preventDefault();
     // TODO:
     // Create user action here
+    const { id } = this.state;
     const { firstName, lastName, age, location, income } = this.state;
     const user = {
       firstName,
@@ -37,7 +39,7 @@ class UserSettings extends React.Component {
       income
     };
     console.log(user);
-    API.postUser(user);
+    API.updateUser(id, user);
     this.setState({
       firstName: "",
       lastName: "",
@@ -53,30 +55,35 @@ class UserSettings extends React.Component {
         <Navbar />
         <form>
           <Input
+            onChange={this.handleInputChange}
             type="text"
             name="firstName"
             value={this.state.firstName}
             placeholder="First Name"
           />
           <Input
+            onChange={this.handleInputChange}
             type="text"
             name="lastName"
             value={this.state.lastName}
             placeholder="Last Name"
           />
           <Input
+            onChange={this.handleInputChange}
             type="number"
             name="age"
             value={this.state.age}
             placeholder="Age"
           />
           <Input
+            onChange={this.handleInputChange}
             type="number"
             name="income"
             value={this.state.income}
             placeholder="Income"
           />
           <Input
+            onChange={this.handleInputChange}
             type="text"
             name="location"
             value={this.state.location}
