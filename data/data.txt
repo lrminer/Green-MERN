@@ -1,0 +1,2 @@
+mongoimport --host=127.0.0.1 -d reactgreen -c User --type csv --file ./userInfo.csv --headerline
+mongoimport --host=127.0.0.1 -d reactgreen -c Budget --type csv --file ./userBudget.csv --headerline
