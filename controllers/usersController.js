@@ -6,6 +6,7 @@ module.exports = {
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   },
+  //this one will be depracated in prod
   findById: function(req, res) {
     db.User.find(req.params.id)
       .then(dbUser => res.json(dbUser))

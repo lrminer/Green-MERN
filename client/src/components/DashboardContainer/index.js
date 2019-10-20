@@ -19,10 +19,8 @@ class DashboardContainer extends Component {
     return (
       <>
         <div className="container">
-          {/* <XYPlot height={300} width={300}> */}
           <RadialChart height={300} width={300} data={this.state.data} />
-          {/* </XYPlot> */}
-        </div>
+       </div>
       </>
     );
   }
