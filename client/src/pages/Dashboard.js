@@ -23,9 +23,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <>
-        <Navbar />
+        <div className="container">
+          <Navbar />
           <DashboardComponent />
-        <Footer />
+          <Footer />
+        </div>
       </>
     );
   }
