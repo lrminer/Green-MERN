@@ -8,19 +8,19 @@ import Input from "../components/Input";
 
 class createBudget extends React.Component {
   state = {
-    grocery: 0,
-    dineout: 0,
-    alcohol: 0,
-    housing: 0,
-    apparel: 0,
-    transportation: 0,
-    healthcare: 0,
-    entertainment: 0,
-    personalcare: 0,
-    education: 0,
-    miscellaneous: 0,
-    donations: 0,
-    insurance: 0
+    grocery: "",
+    dineout: "",
+    alcohol: "",
+    housing: "",
+    apparel: "",
+    transportation: "",
+    healthcare: "",
+    entertainment: "",
+    personalcare: "",
+    education: "",
+    miscellaneous: "",
+    donations: "",
+    insurance: ""
   };
 
   componentDidMount() {}
@@ -71,19 +71,19 @@ class createBudget extends React.Component {
     });
 
     this.setState({
-      grocery: 0,
-      dineout: 0,
-      alcohol: 0,
-      housing: 0,
-      apparel: 0,
-      transportation: 0,
-      healthcare: 0,
-      entertainment: 0,
-      personalcare: 0,
-      education: 0,
-      miscellaneous: 0,
-      donations: 0,
-      insurance: 0
+      grocery: "",
+      dineout: "",
+      alcohol: "",
+      housing: "",
+      apparel: "",
+      transportation: "",
+      healthcare: "",
+      entertainment: "",
+      personalcare: "",
+      education: "",
+      miscellaneous: "",
+      donations: "",
+      insurance: ""
     });
   };
 
@@ -145,8 +145,8 @@ class createBudget extends React.Component {
               onChange={this.handleInputChange}
               type="number"
               placeholder="Healthcare"
-              name="healtcare"
-              aria="healtcare"
+              name="healthcare"
+              aria="healthcare"
               value={this.state.healthcare}
             />
             <Input

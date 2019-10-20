@@ -13,7 +13,7 @@ class UserSettings extends React.Component {
     age: "",
     location: "",
     income: "",
-    id: window.location.href
+    id: window.location.href ///// will need to make this so that it just grabs the /:id for the user.......
   };
 
   componentDidMount() {}
