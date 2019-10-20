@@ -66,7 +66,9 @@ class createBudget extends React.Component {
     };
 
     console.log(budget);
-    API.postBudget(budget);
+    API.postBudget(budget).then(budget => {
+      console.log(budget);
+    });
 
     this.setState({
       grocery: 0,
