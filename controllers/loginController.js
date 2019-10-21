@@ -10,12 +10,16 @@ const validateLogin = require("../validation/login-validation");
 
 module.exports = {
   login: function(req, res) {
+    console.log(req.body);
+
     const { errors, isValid } = validateLogin(req.body);
 
     if (!isValid) {
+      console.log(errors);
       return res.status(400).json(errors);
     }
 
+    const { username } = req.body;
     db.User.findOne({ username }).then(user => {
       if (!user) {
         return res
@@ -39,8 +43,8 @@ module.exports = {
         }
       });
     });
-    db.User.findOne(req.query)
-      .then(dbUsers => res.json(dbUsers))
-      .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
+    // db.User.findOne(req.query)
+    //   .then(dbUsers => res.json(dbUsers))
+    //   .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   }
 };

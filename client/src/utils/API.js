@@ -36,7 +36,10 @@ export default {
   },
 
   // login operations
-  login: function() {
-    return axios.post("/api/login");
+  login: function(user) {
+    return axios.post("/api/login", user);
+  },
+  register: function(user) {
+    return axios.post("/api/register", user);
   }
 };

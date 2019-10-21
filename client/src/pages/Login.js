@@ -24,9 +24,13 @@ class Login extends React.Component {
     event.preventDefault();
     // TODO:
     // Login action here
+    const { username, password } = this.state;
+    const user = { username, password };
 
-    API.login().then(response => {
-      // console.log(response);
+    console.log(user);
+    API.login(user).then(response => {
+      console.log(response);
+
       const { token } = response.data;
       console.log(token);
       localStorage.setItem("jwt", token);
@@ -40,8 +44,18 @@ class Login extends React.Component {
         <div className="container">
           <Navbar />
           <form>
-            <Input type="text" name="username" />
-            <Input type="password" name="password" />
+            <Input
+              value={this.state.username}
+              onChange={this.handleInputChange}
+              type="text"
+              name="username"
+            />
+            <Input
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              type="password"
+              name="password"
+            />
             <Button
               type="button"
               onClick={this.handleFormSubmit}

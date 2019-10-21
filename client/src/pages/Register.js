@@ -52,7 +52,7 @@ class Register extends React.Component {
       // income
     };
     console.log(user);
-    API.postUser(user);
+    API.register(user);
     this.setState({
       username: "",
       email: "",
