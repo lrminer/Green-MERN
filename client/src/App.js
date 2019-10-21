@@ -13,11 +13,11 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/createBudget" component={createBudget} />
-          <Route exact path="/chart" component={Chart} />
+          <Route exact path="/" component={Login} render={() => <Login />} />
+          <Route exact path="/register" render={() => <Register />} />
+          <Route exact path="/dashboard" render={() => <Dashboard />} />
+          <Route exact path="/createBudget" render={() => <createBudget />} />
+          <Route exact path="/chart" render={() => <Chart />} />
         </Switch>
       </div>
     </Router>

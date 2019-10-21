@@ -22,7 +22,11 @@ class Navbar extends Component {
                 <a className="nav-link" href="/createBudget">
                   Create Budget
                 </a>
-
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="/chart">
+                  Chart
+                </a>
               </li>
             </ul>
           </div>

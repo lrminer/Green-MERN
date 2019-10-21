@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import API from "../utils/API";
+// import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PieChart from "../components/PieChart";
-import axios from "axios";
+import axios from 'axios'
 
 
 
@@ -15,7 +15,7 @@ class Chart extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getChartData();
     }
 
@@ -24,6 +24,8 @@ class Chart extends Component {
         let currentComponent = this;
         axios.get(`/api/budget/`).then(response => {
             console.log(response);
+            // axios.get(`/api/budget/`).then(response => {
+            // console.log(response);
             //   currentComponent.setState({
             //     pets: response.data.pets,
             //     activePet: {

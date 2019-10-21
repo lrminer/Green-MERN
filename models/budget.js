@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  // we're connected!
+});
+
 const budgetSchema = new Schema({
   // budget schema here
   Grocery: {
