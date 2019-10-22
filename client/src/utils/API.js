@@ -4,7 +4,7 @@ export default {
   // user operations
   getUsers: function() {
     return axios.get("/api/users");
-  },
+  },  
   getUser: function(id) {
     return axios.get("/api/users/" + id);
   },

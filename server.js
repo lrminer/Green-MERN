@@ -19,8 +19,15 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connection to database
+mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/reactgreen', { useUnifiedTopology: true, useNewUrlParser: true })
-
+const connection = mongoose.connection
+connection.then((db) => {
+  console.log('The connection to the database was successful');
+  return db
+}).catch((err) => {
+  console.log("There was an error connecting to the database", err)
+})
 
 // App listening
 app.listen(PORT, () => {

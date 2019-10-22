@@ -35,7 +35,8 @@ class Chart extends Component {
             //     activePetVisit: response.data.pets[0].docVisits,
             //     mounted: true
             //   });
-
+            
+            //Dummy data for the chart function
             currentComponent.setState({
                 chartData: {
                     labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
