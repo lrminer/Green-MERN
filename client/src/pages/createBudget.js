@@ -6,7 +6,7 @@ import API from "../utils/API";
 import Button from "../components/Button";
 import Input from "../components/Input";
 
-class createBudget extends React.Component {
+class CreateBudget extends React.Component {
   state = {
     grocery: "",
     dineout: "",
@@ -210,4 +210,4 @@ class createBudget extends React.Component {
   }
 }
 
-export default createBudget;
+export default CreateBudget;
