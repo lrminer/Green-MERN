@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import API from "../utils/API";
+import API from "../utils/API";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PieChart from "../components/PieChart";
@@ -16,13 +16,17 @@ class Chart extends Component {
     }
 
     componentDidMount() {
-        this.getChartData();
+        // this.getChartData();
+        API.getBudgets()
+            .then(budgets => {
+                console.log("from charts.js", budgets)
+            })
     }
 
     getChartData() {
         // Ajax calls here
         let currentComponent = this;
-        axios.get(`/api/budget/`).then(response => {
+        axios.get(`/api/budgets`).then(response => {
             console.log(response);
             // axios.get(`/api/budget/`).then(response => {
             // console.log(response);
@@ -35,7 +39,7 @@ class Chart extends Component {
             //     activePetVisit: response.data.pets[0].docVisits,
             //     mounted: true
             //   });
-            
+
             //Dummy data for the chart function
             currentComponent.setState({
                 chartData: {

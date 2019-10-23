@@ -6,7 +6,7 @@ router
   .route("/")
   .get(budgetsController.findAll)
   .post(budgetsController.create);
-
+ 
 // '/api/budgets/:id'
 router
   .route("/:id")
@@ -14,5 +14,5 @@ router
   .put(budgetsController.update)
   .delete(budgetsController.remove);
 
-module.exports = router;
+module.exports = router;    
    

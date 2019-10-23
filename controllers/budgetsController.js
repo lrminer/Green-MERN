@@ -3,7 +3,10 @@ const db = require("../models");
 module.exports = {
   findAll: function (req, res) {
     db.Budget.find({})
-      .then(dbBudgets => res.json(dbBudgets))
+      .then(dbBudgets => {
+        console.log("From Budget Controller", dbBudgets)
+        res.json(dbBudgets)
+      })
       .catch(err => res.status(422).json(err)); // unprocessable entity (WebDAV)
   },
   findById: function (req, res) {
